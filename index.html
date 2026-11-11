@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Empêche le zoom et force le plein écran Safari -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Rafraîchissement automatique toutes les 300 secondes (5 min) avec cache-busting -->
+    <meta http-equiv="refresh" content="300">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Agenda Parents</title>
+    <style>
+        body {
+            font-family: -apple-system, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 30px;
+        }
+        h1 {
+            font-size: 2.2em;
+            color: #4CAF50;
+            border-bottom: 2px solid #333;
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+        .event-card {
+            background-color: #1e1e1e;
+            border-left: 6px solid #2196F3;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .event-card.today {
+            border-left-color: #FF9800;
+            background-color: #272115;
+        }
+        .date {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #FFC107;
+        }
+        .title {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+        .details {
+            font-size: 1.2em;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Prochains Rendez-vous</h1>
+
+    <!-- Exemple d'événement -->
+    <div class="event-card today">
+        <div class="date">AUJOURD'HUI — 14h30</div>
+        <div class="title">Rendez-vous Docteur Martin</div>
+        <div class="details">Cabinet médical des Lilas — Ne pas oublier la carte Vitale</div>
+    </div>
+
+    <div class="event-card">
+        <div class="date">Jeudi 19 Novembre — 10h00</div>
+        <div class="title">Passage infirmier</div>
+        <div class="details">Prise de sang à jeun</div>
+    </div>
+
+</body>
+</html>
