@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- Rafraîchissement automatique toutes les 5 minutes (300 secondes) -->
+    <!-- Rafraichissement automatique toutes les 5 minutes -->
     <meta http-equiv="refresh" content="300">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
@@ -17,31 +17,44 @@
 </head>
 <body>
 
+    <!-- Bandeau date sur toute la largeur -->
+    <div id="bandeau-date">Chargement...</div>
+
     <header>
         <h1>Prochains Rendez-vous</h1>
     </header>
 
     <main>
-        <!-- Rendez-vous du jour (classe "today") -->
+        <!-- Rendez-vous aujourd'hui -->
         <article class="event-card today">
             <div class="event-date">AUJOURD'HUI &mdash; 14h30</div>
             <div class="event-title">Rendez-vous Docteur Martin</div>
             <div class="event-details">Cabinet des Lilas &bull; Ne pas oublier la carte Vitale</div>
         </article>
 
-        <!-- Rendez-vous à venir (classe standard) -->
+        <!-- Rendez-vous a venir -->
         <article class="event-card">
             <div class="event-date">Jeudi 19 Novembre &mdash; 10h00</div>
             <div class="event-title">Passage infirmier</div>
-            <div class="event-details">Prise de  à jeun à domicile</div>
-        </article>
-
-        <article class="event-card">
-            <div class="event-date">Lundi 23 Novembre &mdash; 15h00</div>
-            <div class="event-title">Visite de Claire & les enfants</div>
-            <div class="event-details">Goûter à la maison</div>
+            <div class="event-details">Prise de sang a jeun a domicile</div>
         </article>
     </main>
 
+    <!-- Script de date compatible iOS 9 -->
+    <script>
+        (function() {
+            var jours = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+            var mois = ['janvier', 'fevrier', 'mars', 'avril', 'mai', 'juin', 
+                        'juillet', 'aout', 'septembre', 'octobre', 'novembre', 'decembre'];
+            
+            var d = new Date();
+            var texte = jours[d.getDay()] + ' ' + d.getDate() + ' ' + mois[d.getMonth()] + ' ' + d.getFullYear();
+            
+            var el = document.getElementById('bandeau-date');
+            if (el) {
+                el.innerHTML = texte;
+            }
+        })();
+    </script>
 </body>
 </html>
